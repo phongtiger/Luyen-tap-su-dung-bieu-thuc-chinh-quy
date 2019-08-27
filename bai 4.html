@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>password</title>
+</head>
+<body>
+
+</body>
+<script>
+    // pass co it nhat 8 ki tu co it nhat 1 so hoac 1 chu
+    function checkNum(str) {
+        let c = str.split("");
+        let regular = /\d/;
+        let count =0;
+        for(let i = 0;i<c.length;i++){
+            if(regular.test(c[i])){
+                count++;
+            }
+        }
+        return count;
+    }
+    function checkChart(str) {
+        let c = str.split("");
+        let regular = /[a-zA-z]/;
+        let count =0;
+        for(let i = 0;i<c.length;i++){
+            if(regular.test(c[i])){
+                count++;
+            }
+        }
+        return count;
+    }
+    function checkPass1(str) {
+        let regular = /[a-zA-z0-9]{8}/;
+        if(regular.test(str)){
+            return true;
+        }
+        return false;
+    }
+    function checkPass2(arr) {
+        if(1 <= checkNum(arr)&&checkNum(arr)<8&&checkPass1(arr)){
+            return true;
+        }
+        else if (1 <= checkChart(arr)&&checkChart(arr)<8&&checkPass1(arr)){
+            return true;
+        }
+        else return false
+    }
+    let pass = 'aasasas1';
+    alert(checkPass2(pass));
+</script>
+</html>

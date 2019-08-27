@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    function check1(a) {
+        let c = a.split("");
+        let count =0;
+        for (let i=0; i<c.length;i++){
+            let regular = /[ueoaiy]/ig;
+            if(regular.test(c[i])){
+                count++;
+            }
+        }
+        return count;
+    }
+    function check2(a) {
+        let c = a.split("");
+        let count =0;
+        for (let i=0; i<c.length;i++){
+            let regular = /[bcdfghjklmnpkrstuvwxwz]/ig;
+            if(regular.test(c[i])){
+                count++;
+            }
+
+        }
+        return count;
+    }
+    let a = 'hello world';
+    alert(check1(a));
+    alert(check2(a));
+
+</script>
+</html>
